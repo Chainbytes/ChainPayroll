@@ -1,6 +1,6 @@
 'use strict'
 let Messages = [];
-const delayMessaage = 5000;
+const delayMessage = 5000;
 const SlackWebHook = require('winston-slack-webhook').SlackWebHook, winston = require('winston');
 module.exports = {
     showMetrics: (blockchaindata, total, payroll) => {
