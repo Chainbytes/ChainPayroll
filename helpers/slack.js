@@ -1,9 +1,9 @@
 'use strict'
 let Messages = [];
+const delayMessaage = 5000;
 const SlackWebHook = require('winston-slack-webhook').SlackWebHook, winston = require('winston');
 module.exports = {
     showMetrics: (blockchaindata, total, payroll) => {
-
         const satChange = .001;
         const startBalance = (blockchaindata.final_balance / 100000000)
         payroll.payee.forEach((pay) => {
@@ -20,10 +20,12 @@ module.exports = {
         else {
             Messages.push("Warning:  Days Remaining in wallet : " + days.toFixed(0));
         }
+        slackinfo = payroll.slackinfo;
         slackMessagesProcess();
     },
     messages: Messages
 }
+let slackinfo = '';
 function slackMessagesProcess() {
     const slacklogger = new winston.Logger({
         level: 'info',
@@ -31,9 +33,9 @@ function slackMessagesProcess() {
             new (winston.transports.Console)(),
             new SlackWebHook({
                 level: 'info',
-                webhookUrl: payroll.slackinfo.webhookUrl,
-                channel: payroll.slackinfo.channel,
-                username: payroll.slackinfo.username
+                webhookUrl: slackinfo.webhookUrl,
+                channel: slackinfo.channel,
+                username: slackinfo.username
             })
         ]
     });
