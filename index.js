@@ -6,7 +6,7 @@ const apiCall = require('./helpers/apiCall.js');
 const request = require('request')
 const winston = require('winston');
 const slack = require("./helpers/slack.js");
-process.env.NODE_ENV='dev';
+//process.env.NODE_ENV='dev';
 wallet.pushPayment(payroll.payee, payroll.payor).then((total) => {
     console.log("Total send ", total);
     const query = "https://blockchain.info/address/" + payroll.payor.address + "?format=json";
