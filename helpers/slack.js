@@ -15,7 +15,7 @@ module.exports = {
         const days = Number(startBalance) / (total / 100000000);
         console.log("Days:" + days, startBalance, total)
         if (total > 7) {
-            Messages.push("Months Funded: " + (days / 30).toFixed(0) + "(" + days.toFixed(0) + "days)");
+            Messages.push("Months Funded: " + (days / 30).toFixed(0) + " (" + days.toFixed(0) + "days)");
         }
         else {
             Messages.push("Warning:  Days Remaining in wallet : " + days.toFixed(0));
