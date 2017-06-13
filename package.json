@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/hitsnorth/ChainPayroll#readme",
   "dependencies": {
-    "chainbyteswallet": "0.0.50",
+    "chainbyteswallet": "0.0.51",
     "dotenv": "^4.0.0",
     "fs": "0.0.1-security",
     "winston-slack-webhook": "^0.1.4"
