@@ -57,8 +57,6 @@ typings/
 # dotenv environment variables file
 .env
 
-/payee.json
-/payor.json
 /payroll.json
 .idea/ChainPayroll.iml
 .idea/misc.xml
